@@ -21,10 +21,10 @@ Specifically:
 
 ## Data Storage
 
-The extension stores a single preference (`enabled: true/false`) using Chrome's built-in `chrome.storage.sync` API. This data:
+The extension stores a single preference (`enabled: true/false`) using the browser's built-in `browser.storage.sync` API. This data:
 
 - Stays entirely within your browser
-- Syncs only via your Google account's Chrome sync (if enabled)
+- Syncs only via your browser's built-in sync (e.g. Firefox Sync), if enabled
 - Is never sent to the extension developer or any third party
 
 ## Permissions Explained
@@ -34,7 +34,7 @@ The extension stores a single preference (`enabled: true/false`) using Chrome's 
 | `storage` | To remember your on/off preference |
 | Host access to `x.com` and `twitter.com` | To inject CSS that changes the background color |
 
-The "Read and change your data on x.com" message shown by Chrome is a standard warning for any extension that modifies page appearance. This extension only changes CSS colors and does not read any page data.
+The "Read and change your data on x.com" message shown by the browser is a standard warning for any extension that modifies page appearance. This extension only changes CSS colors and does not read any page data.
 
 ## Open Source
 
