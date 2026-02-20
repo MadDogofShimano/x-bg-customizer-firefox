@@ -187,13 +187,13 @@ ${A} body {
   function init() {
     injectStyle();
 
-    chrome.storage.sync.get({ enabled: true }, (data) => {
+    browser.storage.sync.get({ enabled: true }).then((data) => {
       enabled = data.enabled;
       observeDom();
       scheduleApply();
     });
 
-    chrome.storage.onChanged.addListener((changes, area) => {
+    browser.storage.onChanged.addListener((changes, area) => {
       if (area === "sync" && changes.enabled) {
         enabled = changes.enabled.newValue;
         scheduleApply();
